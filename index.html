@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration with Wadsam University</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <h1>Wadsam University Registration Form</h1> 
+        </nav>
+      </header>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>1000 seats For 1000 Chief's Hurry up!</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form action="https://cosmofeed.com/vp/64f3638b5b9b46001ff3b0f0" method="POST" name="google-sheet" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Age</label>
+                                    <input type="text" name="Age" id="Age" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone_number" id="phone_number" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="Address" class="required">Address</label>
+                                    <input type="text" name="Address" id="Address" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="City" class="required">City</label>
+                                    <input type="text" name="City" id="City" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="State" class="required">State</label>
+                                    <input type="text" name="State" id="State" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Country" class="required">Country</label>
+                                    <input type="text" name="Country" id="Country" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Pincode" class="required">Pincode</label>
+                                    <input type="text" name="Pincode" id="Pincode" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="donate-us">
+                            <label>Reason For Joining Wadsam University</label>
+                            <div class="form-input">
+                                <label for="Message" class="required">Message</label>
+                                <input type="text" name="Message" id="Message" />
+                            </div>
+                             
+                        </div>
+                      
+                        <div class="form-submit">
+                           <input type="submit" value="Submit" class="submit" id="submit" name="submit">
+                            <input type="reset" value="Reset" class="submit" id="reset" name="reset"> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMitN07H1UbGfQMAgWfcYZERCo8gnutv-7DEnlrCcRPbdn9Ud8MyHer0e37DMsiY8n/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Redirect to the specified URL
+            window.location.href = this.action;
+        });
+      </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+</body> 
+</html>
